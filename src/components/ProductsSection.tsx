@@ -16,7 +16,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '50',
       price: '$8.50',
-      image: 'https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop',
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '100',
       price: '$3.20',
-      image: 'https://images.unsplash.com/photo-1606933248051-5ce98fadee0d?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=400&h=300&fit=crop',
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '75',
       price: '$12.99',
-      image: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1591290619897-743aaa9f8367?w=400&h=300&fit=crop',
     },
     {
       id: 4,
