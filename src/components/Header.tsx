@@ -77,7 +77,8 @@ export default function Header() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="px-6 py-2 bg-gold text-black rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all duration-300 text-sm font-semibold"
+            style={{ backgroundColor: '#d4af37', color: '#000000' }}
+            className="px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all duration-300 text-sm font-semibold"
           >
             Request Quote
           </motion.button>
@@ -129,7 +130,7 @@ export default function Header() {
             <button className="w-full px-4 py-2 text-white border border-gold rounded-lg hover:bg-gold/10 transition-all text-sm font-semibold">
               Login
             </button>
-            <button className="w-full px-4 py-2 bg-gold text-black rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all text-sm font-semibold">
+            <button style={{ backgroundColor: '#d4af37', color: '#000000' }} className="w-full px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all text-sm font-semibold">
               Request Quote
             </button>
           </div>
