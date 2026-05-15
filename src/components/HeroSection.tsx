@@ -25,8 +25,16 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 bg-dark">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-dark to-dark opacity-50"></div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=800&fit=crop")',
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-dark to-dark opacity-70"></div>
       
       {/* Animated background elements */}
       <motion.div

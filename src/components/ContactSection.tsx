@@ -223,23 +223,29 @@ export default function ContactSection() {
             <p className="text-center text-text-gray mb-6 text-sm">
               Or reach out directly through any of these channels
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div>
                 <h4 className="text-gold font-bold mb-2">Email</h4>
-                <a href="mailto:info@blackfoxphones.com" className="text-white hover:text-gold transition-colors">
+                <a href="mailto:info@blackfoxphones.com" className="text-white hover:text-gold transition-colors text-sm">
                   info@blackfoxphones.com
                 </a>
               </div>
               <div>
-                <h4 className="text-gold font-bold mb-2">Phone (Dubai)</h4>
-                <a href="tel:+971XXXXXXXXX" className="text-white hover:text-gold transition-colors">
-                  +971 XX XXX XXXX
+                <h4 className="text-gold font-bold mb-2">Mr. Neeraj</h4>
+                <a href="tel:+919811112254" className="text-white hover:text-gold transition-colors text-sm">
+                  +91 98111 12254
+                </a>
+              </div>
+              <div>
+                <h4 className="text-gold font-bold mb-2">Mr. Saket</h4>
+                <a href="tel:+919717212357" className="text-white hover:text-gold transition-colors text-sm">
+                  +91 97172 12357
                 </a>
               </div>
               <div>
                 <h4 className="text-gold font-bold mb-2">WhatsApp</h4>
-                <a href="https://wa.me/971XXXXXXXXX" className="text-white hover:text-gold transition-colors">
-                  +971 XXXX XXXX
+                <a href="https://wa.me/919811112254" className="text-white hover:text-gold transition-colors text-sm">
+                  +91 9811112254
                 </a>
               </div>
             </div>

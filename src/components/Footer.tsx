@@ -100,21 +100,29 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 pb-12 border-b border-gold/20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 pb-12 border-b border-gold/20"
         >
           <div className="text-center md:text-left">
-            <h4 className="text-gold font-bold mb-2 text-sm">DUBAI HEADQUARTERS</h4>
+            <h4 className="text-gold font-bold mb-2 text-sm">DUBAI HQ</h4>
             <p className="text-text-gray text-sm">
-              Dubai, United Arab Emirates<br />
-              +971 XX XXX XXXX<br />
-              hello@blackfoxphones.com
+              Dubai, UAE<br />
+              hello@blackfoxphones.com<br />
+              24/7 Support Available
             </p>
           </div>
           <div className="text-center md:text-left">
-            <h4 className="text-gold font-bold mb-2 text-sm">INDIA FACILITY</h4>
+            <h4 className="text-gold font-bold mb-2 text-sm">HONG KONG OFFICE</h4>
             <p className="text-text-gray text-sm">
-              Bangalore, India<br />
-              +91 XXXX XXXX XXXX<br />
+              Hong Kong<br />
+              Asia Pacific Hub<br />
+              Regional Logistics
+            </p>
+          </div>
+          <div className="text-center md:text-left">
+            <h4 className="text-gold font-bold mb-2 text-sm">GURGAON, INDIA</h4>
+            <p className="text-text-gray text-sm">
+              Mr. Neeraj: +91 9811112254<br />
+              Mr. Saket: +91 9717212357<br />
               info@blackfoxphones.in
             </p>
           </div>
@@ -138,13 +146,13 @@ export default function Footer() {
         >
           <p>© {currentYear} Blackfox Phones Trading LLC. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gold transition-colors">
+            <a href="/privacy" className="hover:text-gold transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-gold transition-colors">
+            <a href="/terms" className="hover:text-gold transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-gold transition-colors">
+            <a href="/cookies" className="hover:text-gold transition-colors">
               Cookies
             </a>
           </div>

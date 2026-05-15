@@ -16,6 +16,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '50',
       price: '$8.50',
+      image: 'https://images.unsplash.com/photo-1591290619897-743aaa9f8367?w=400&h=300&fit=crop',
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '100',
       price: '$3.20',
+      image: 'https://images.unsplash.com/photo-1505394033641-9a60baad3149?w=400&h=300&fit=crop',
     },
     {
       id: 3,
@@ -32,6 +34,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '75',
       price: '$12.99',
+      image: 'https://images.unsplash.com/photo-1599286513879-c8b5cfb6c4c4?w=400&h=300&fit=crop',
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ export default function ProductsSection() {
       stock: 'Limited',
       moq: '30',
       price: '$18.50',
+      image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop',
     },
     {
       id: 5,
@@ -48,6 +52,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '25',
       price: '$65.00',
+      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop',
     },
     {
       id: 6,
@@ -56,6 +61,7 @@ export default function ProductsSection() {
       stock: 'In Stock',
       moq: '40',
       price: '$15.75',
+      image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop',
     },
   ];
 
@@ -141,11 +147,14 @@ export default function ProductsSection() {
               whileHover={{ y: -12 }}
               className="group bg-charcoal rounded-lg overflow-hidden border border-gold/10 hover:border-gold/40 transition-all duration-300"
             >
-              {/* Product Image Placeholder */}
+              {/* Product Image */}
               <div className="h-48 bg-gradient-to-br from-charcoal to-dark relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <span className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity">📦</span>
-                </div>
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
               </div>
 
               {/* Product Info */}

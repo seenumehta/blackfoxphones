@@ -117,9 +117,13 @@ export default function WholesaleSolutionsSection() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="h-80 bg-gradient-to-br from-gold/20 to-blue/20 rounded-lg flex items-center justify-center text-8xl"
+              className="h-80 bg-gradient-to-br from-gold/20 to-blue/20 rounded-lg overflow-hidden flex items-center justify-center"
             >
-              🌍
+              <img 
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop"
+                alt="Global Distribution Hub"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
 
             {/* Right - Content */}
@@ -128,13 +132,13 @@ export default function WholesaleSolutionsSection() {
                 Global Distribution<span className="text-gold">Hub</span>
               </h3>
               <p className="text-text-gray text-lg mb-6 leading-relaxed">
-                With operations in both Dubai and India, we provide strategic logistics coverage across the MENA region 
-                and South Asia. Our dual location advantage means faster delivery times and competitive pricing for your business.
+                With operations in Dubai, Hong Kong, and Gurgaon (India), we provide strategic logistics coverage across MENA, Asia Pacific, 
+                and South Asia. Our multi-location advantage means faster delivery times and competitive pricing for your global business.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="text-gold font-bold mb-2">Dubai Hub</h4>
+                  <h4 className="text-gold font-bold mb-2">Dubai HQ</h4>
                   <ul className="text-text-gray text-sm space-y-1">
                     <li>• UAE Headquarters</li>
                     <li>• Same-day shipping</li>
@@ -142,9 +146,17 @@ export default function WholesaleSolutionsSection() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-gold font-bold mb-2">India Facility</h4>
+                  <h4 className="text-gold font-bold mb-2">Hong Kong Office</h4>
                   <ul className="text-text-gray text-sm space-y-1">
-                    <li>• Bangalore Base</li>
+                    <li>• Asia Pacific Hub</li>
+                    <li>• 3-day delivery</li>
+                    <li>• Regional logistics</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-gold font-bold mb-2">Gurgaon, India</h4>
+                  <ul className="text-text-gray text-sm space-y-1">
+                    <li>• India Facility</li>
                     <li>• 2-day delivery</li>
                     <li>• Cost optimized</li>
                   </ul>
