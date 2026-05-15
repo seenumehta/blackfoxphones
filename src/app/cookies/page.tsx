@@ -88,10 +88,10 @@ export default function CookiesPolicy() {
                 </p>
                 <h3 className="text-xl font-semibold text-gold mb-3 mt-4">To manage cookies:</h3>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li><span className="text-gold font-semibold">Chrome:</span> Settings > Privacy and security > Cookies</li>
-                  <li><span className="text-gold font-semibold">Firefox:</span> Preferences > Privacy > Cookies</li>
-                  <li><span className="text-gold font-semibold">Safari:</span> Preferences > Privacy > Cookies</li>
-                  <li><span className="text-gold font-semibold">Edge:</span> Settings > Privacy and services > Cookies</li>
+                  <li><span className="text-gold font-semibold">Chrome:</span> Settings &gt; Privacy and security &gt; Cookies</li>
+                  <li><span className="text-gold font-semibold">Firefox:</span> Preferences &gt; Privacy &gt; Cookies</li>
+                  <li><span className="text-gold font-semibold">Safari:</span> Preferences &gt; Privacy &gt; Cookies</li>
+                  <li><span className="text-gold font-semibold">Edge:</span> Settings &gt; Privacy and services &gt; Cookies</li>
                 </ul>
               </section>
 
