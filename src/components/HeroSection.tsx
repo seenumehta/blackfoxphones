@@ -107,15 +107,17 @@ export default function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
             style={{ backgroundColor: '#d4af37', color: '#000000' }}
-            className="px-8 md:px-12 py-4 font-bold rounded-lg transition-all duration-300 whitespace-nowrap"
+            className="px-8 md:px-12 py-4 font-bold rounded-lg transition-all duration-300 whitespace-nowrap cursor-pointer"
           >
             Explore Catalog
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 md:px-12 py-4 border-2 border-silver text-white font-bold rounded-lg hover:bg-silver/10 transition-all duration-300 whitespace-nowrap"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 md:px-12 py-4 border-2 border-silver text-white font-bold rounded-lg hover:bg-silver/10 transition-all duration-300 whitespace-nowrap cursor-pointer"
           >
             Request Quote
           </motion.button>
