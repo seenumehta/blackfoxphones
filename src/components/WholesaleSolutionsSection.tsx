@@ -3,6 +3,13 @@
 import { motion } from 'framer-motion';
 
 export default function WholesaleSolutionsSection() {
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const solutions = [
     {
       title: 'Competitive Pricing',
@@ -18,6 +25,11 @@ export default function WholesaleSolutionsSection() {
       title: 'Flexible Solutions',
       description: 'Custom Packaging Available Drop-shipping Options Flexible Payment Terms',
       image: '🎁',
+    },
+    {
+      title: 'Direct China Sourcing',
+      description: 'Access to manufacturers in China Factory direct pricing Bulk ordering capabilities Custom product development',
+      image: '🏭',
     },
   ];
 
@@ -132,11 +144,11 @@ export default function WholesaleSolutionsSection() {
                 Global Distribution<span className="text-gold">Hub</span>
               </h3>
               <p className="text-text-gray text-lg mb-6 leading-relaxed">
-                With operations in Dubai, Hong Kong, and Gurgaon (India), we provide strategic logistics coverage across MENA, Asia Pacific, 
-                and South Asia. Our multi-location advantage means faster delivery times and competitive pricing for your global business.
+                With operations in Dubai, Hong Kong, Gurgaon (India), and direct access to China's manufacturing hubs, we provide strategic logistics coverage across MENA, Asia Pacific, 
+                South Asia, and China. Our multi-location advantage means faster delivery times, competitive pricing, and direct sourcing capabilities for your global business.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
                 <div>
                   <h4 className="text-gold font-bold mb-2">Dubai HQ</h4>
                   <ul className="text-text-gray text-sm space-y-1">
@@ -161,13 +173,22 @@ export default function WholesaleSolutionsSection() {
                     <li>• Cost optimized</li>
                   </ul>
                 </div>
+                <div>
+                  <h4 className="text-gold font-bold mb-2">China Sourcing</h4>
+                  <ul className="text-text-gray text-sm space-y-1">
+                    <li>• Factory Direct Access</li>
+                    <li>• Bulk Orders Welcome</li>
+                    <li>• Custom Development</li>
+                  </ul>
+                </div>
               </div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={scrollToProducts}
                 style={{ backgroundColor: '#d4af37', color: '#000000' }}
-                className="px-8 py-3 font-bold rounded-lg transition-all duration-300"
+                className="px-8 py-3 font-bold rounded-lg transition-all duration-300 cursor-pointer"
               >
                 Learn More
               </motion.button>
