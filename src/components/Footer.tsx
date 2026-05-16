@@ -104,6 +104,7 @@ export default function Footer() {
         >
           <div className="text-center md:text-left">
             <h4 className="text-gold font-bold mb-2 text-sm">DUBAI HQ</h4>
+            <p className="text-text-gray text-sm mb-2 font-semibold">Blackfox Trading LLC</p>
             <p className="text-text-gray text-sm">
               Dubai, UAE<br />
               hello@blackfoxphones.com<br />
@@ -120,6 +121,7 @@ export default function Footer() {
           </div>
           <div className="text-center md:text-left">
             <h4 className="text-gold font-bold mb-2 text-sm">GURGAON, INDIA</h4>
+            <p className="text-text-gray text-sm mb-2 font-semibold">Blackfox Phone Pvt. Ltd.</p>
             <p className="text-text-gray text-sm">
               Mr. Neeraj: +91 9811112254<br />
               Mr. Saket: +91 9717212357<br />
