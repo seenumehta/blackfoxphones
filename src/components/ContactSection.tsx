@@ -14,6 +14,8 @@ export default function ContactSection() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -24,9 +26,30 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', company: '', phone: '', businessType: '', quantityRange: '' });
+    setIsLoading(true);
+    setError(null);
+
+    fetch('/api/request-quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        if (data.success) {
+          setIsSubmitted(true);
+          setTimeout(() => setIsSubmitted(false), 4000);
+          setFormData({ name: '', email: '', company: '', phone: '', businessType: '', quantityRange: '' });
+        } else {
+          setError('Failed to send request. Please try again later.');
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false);
+        setError('Failed to send request. Please try again later.');
+      });
   };
 
   const containerVariants = {
@@ -195,10 +218,17 @@ export default function ContactSection() {
                   color: '#000000',
                 }}
                 className="w-full md:w-auto px-10 py-4 font-bold rounded-lg hover:shadow-xl transition-all duration-300"
+                disabled={isLoading}
               >
-                Submit Quote Request
+                {isLoading ? 'Sending...' : 'Submit Quote Request'}
               </motion.button>
             </motion.div>
+          {/* Error Message */}
+          {error && (
+            <div className="mt-4 p-3 bg-red-600/10 border border-red-600 rounded text-red-300 text-center">
+              {error}
+            </div>
+          )}
           </form>
 
           {/* Success Message */}
