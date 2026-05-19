@@ -10,18 +10,38 @@ type QuoteData = {
   quantityRange: string;
 };
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 587),
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+// Validate required environment variables
+const validateEnvVars = () => {
+  const required = ['SMTP_HOST', 'SMTP_USER', 'SMTP_PASS'];
+  const missing = required.filter(key => !process.env[key]);
+  
+  if (missing.length > 0) {
+    throw new Error(
+      `Missing email configuration: ${missing.join(', ')}. ` +
+      'Please set these in .env.local file. See .env.local.example for reference.'
+    );
+  }
+};
+
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT || 587),
+    secure: process.env.SMTP_SECURE === 'true',
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+};
 
 export async function POST(req: Request) {
   try {
+    // Validate environment variables first
+    validateEnvVars();
+    
+    const transporter = createTransporter();
+    
     const body = await req.json();
     const data: QuoteData = body;
 
@@ -67,7 +87,27 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('Error sending quote emails', err);
-    return NextResponse.json({ success: false, error: 'Failed to send emails' }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('Error sending quote emails:', errorMessage);
+    
+    // Check if it's a configuration error
+    if (errorMessage.includes('Missing email configuration')) {
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'Email service not configured. Please contact support.' 
+        },
+        { status: 503 }
+      );
+    }
+    
+    // Otherwise, it's a runtime error (SMTP connection, etc)
+    return NextResponse.json(
+      { 
+        success: false, 
+        error: 'Failed to send request. Please try again later or contact support directly.' 
+      },
+      { status: 500 }
+    );
   }
 }
