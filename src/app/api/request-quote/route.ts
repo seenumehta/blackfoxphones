@@ -47,13 +47,56 @@ export async function POST(req: Request) {
 
     // Compose company email
     const companyHtml = `
-      <h2>New Quote Request</h2>
-      <p><strong>Name:</strong> ${data.name}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Company:</strong> ${data.company}</p>
-      <p><strong>Phone:</strong> ${data.phone}</p>
-      <p><strong>Business Type:</strong> ${data.businessType}</p>
-      <p><strong>Quantity Range:</strong> ${data.quantityRange}</p>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            h2 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+            .details { margin: 20px 0; }
+            .detail-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+            .detail-label { font-weight: bold; color: #333; }
+            .detail-value { color: #666; }
+            .footer { margin-top: 30px; padding-top: 20px; border-top: 2px solid #d4af37; text-align: center; font-size: 12px; color: #999; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h2>📋 New Quote Request Received</h2>
+            <div class="details">
+              <div class="detail-row">
+                <span class="detail-label">Client Name:</span>
+                <span class="detail-value">${data.name}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value">${data.email}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Company:</span>
+                <span class="detail-value">${data.company}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">${data.phone}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Business Type:</span>
+                <span class="detail-value">${data.businessType}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Quantity Range:</span>
+                <span class="detail-value">${data.quantityRange}</span>
+              </div>
+            </div>
+            <div class="footer">
+              <p>Blackfox Phones Trading LLC | Wholesale Division</p>
+              <p>Please respond to this quote request within 24 hours</p>
+            </div>
+          </div>
+        </body>
+      </html>
     `;
 
     // Send email to company
@@ -66,16 +109,67 @@ export async function POST(req: Request) {
 
     // Send confirmation to user
     const userHtml = `
-      <h2>Thanks for your request, ${data.name}!</h2>
-      <p>We received your quote request and our team will contact you shortly.</p>
-      <p><strong>Summary:</strong></p>
-      <ul>
-        <li>Company: ${data.company}</li>
-        <li>Phone: ${data.phone}</li>
-        <li>Business Type: ${data.businessType}</li>
-        <li>Quantity Range: ${data.quantityRange}</li>
-      </ul>
-      <p>If you need urgent assistance, email us at ${process.env.COMPANY_EMAIL || 'info@blackfoxphones.com'}.</p>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            h2 { color: #d4af37; }
+            .success-badge { display: inline-block; background: #4caf50; color: white; padding: 8px 16px; border-radius: 4px; margin-bottom: 20px; }
+            .summary { background: #f9f9f9; padding: 20px; border-radius: 6px; margin: 20px 0; }
+            .summary-title { font-weight: bold; color: #333; margin-bottom: 15px; }
+            .summary-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+            .summary-label { font-weight: 600; color: #333; }
+            .summary-value { color: #666; }
+            .contact-section { background: #fffbf0; padding: 20px; border-left: 4px solid #d4af37; margin: 20px 0; }
+            .contact-section p { margin: 10px 0; }
+            .footer { margin-top: 30px; padding-top: 20px; text-align: center; font-size: 12px; color: #999; border-top: 2px solid #d4af37; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h2>Thank You for Your Quote Request! 🎉</h2>
+            <div class="success-badge">✓ Request Received</div>
+            
+            <p>Hello ${data.name},</p>
+            <p>We've successfully received your wholesale quote request. Our team will review your details and contact you shortly with competitive pricing and terms tailored to your business needs.</p>
+            
+            <div class="summary">
+              <div class="summary-title">Your Quote Summary:</div>
+              <div class="summary-item">
+                <span class="summary-label">Company:</span>
+                <span class="summary-value">${data.company}</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Contact Phone:</span>
+                <span class="summary-value">${data.phone}</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Business Type:</span>
+                <span class="summary-value">${data.businessType}</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Quantity Range:</span>
+                <span class="summary-value">${data.quantityRange} units</span>
+              </div>
+            </div>
+            
+            <div class="contact-section">
+              <p><strong>Need urgent assistance?</strong></p>
+              <p>Email: ${process.env.COMPANY_EMAIL || 'info@blackfoxphones.com'}</p>
+              <p>Our sales team typically responds within 24 hours during business days.</p>
+            </div>
+            
+            <p>We look forward to partnering with you!</p>
+            
+            <div class="footer">
+              <p><strong>Blackfox Phones Trading LLC</strong></p>
+              <p>Your Trusted Wholesale Partner</p>
+            </div>
+          </div>
+        </body>
+      </html>
     `;
 
     await transporter.sendMail({
