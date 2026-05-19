@@ -69,6 +69,7 @@ export default function Header() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             style={{ backgroundColor: '#d4af37', color: '#000000' }}
             className="px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all duration-300 text-sm font-semibold"
           >
@@ -119,7 +120,14 @@ export default function Header() {
             </a>
           ))}
           <div className="pt-4 space-y-2 border-t border-gold/20">
-            <button style={{ backgroundColor: '#d4af37', color: '#000000' }} className="w-full px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all text-sm font-semibold">
+            <button 
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMobileMenuOpen(false);
+              }}
+              style={{ backgroundColor: '#d4af37', color: '#000000' }} 
+              className="w-full px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-gold/40 transition-all text-sm font-semibold"
+            >
               Request Quote
             </button>
           </div>
